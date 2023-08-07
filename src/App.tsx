@@ -1,27 +1,18 @@
-import { useState,useEffect } from 'react';
-import './App.scss';
-import Parent from './components/Parent';
-import axios from "axios"
-
+import { useState, useEffect } from "react";
+import "./App.scss";
+import Parent from "./components/Parent";
+import Child from "./components/child";
 
 function App() {
-  const [data, setdata] = useState([])
-
-  useEffect(() => {
-     let url = "https://jsonplaceholder.typicode.com/posts"
-    axios.get(url).then((res)=>{
-      setdata(res.data)
-    }).catch((err)=>{
-      console.log(err)
-    })
-  }, [])
-  
+  useEffect(() => {}, []);
 
   return (
     <div className="App">
-    <h1 className='text-primary'>this is bootstrap</h1>
+      <h1 className="text-primary">Weather Project</h1>
+      <Parent />
 
-    <Parent data ={data} />
+      <Child />
+
     </div>
   );
 }
