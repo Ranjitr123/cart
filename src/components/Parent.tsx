@@ -44,20 +44,37 @@ function Parent() {
 
   // addsum test 
 
-  let array = [4,6,-3,5,1]
-  let target = 2
+  
 
   let addsum = (val:any,finalval:any)=>{
-    for(let i = 0 ; i<= val.length; i++){
-          for(let j = i+1; j<= val.length;j++  ){
-            if(val[i] + val [j] === finalval){
+    for(let i = 0 ; i< val.length; i++){
+          for(let j = i+1; j< val.length;j++  ){
+            if(val[i] + val[j] === finalval){
+              return [val[i],val[j]]
             
-              return [i,j]
             }
+          
           }
     }
   }
-    console.log(addsum([4,6,2,5,1],7))
+    console.log(addsum([4,6,-3,5,3],2))
+//  best time for buy and sell stocks
+
+function maxProfit(prices:any) {
+  let profit = 0;
+  
+  for (let i = 1; i < prices.length; i++) {
+    if (prices[i] > prices[i - 1]) {
+      profit += prices[i] - prices[i - 1];
+    }
+  }
+  
+  return profit;
+}
+
+const stockPrices = [2,22,1,45,55];
+const result = maxProfit(stockPrices);
+console.log("Max Profit:", result);
 
   return (
     <div>
