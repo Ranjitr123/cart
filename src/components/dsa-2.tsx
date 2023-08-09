@@ -43,33 +43,47 @@ function hamming(x: any, y: any) {
 hamming("rakesh", "sanjit");
 console.log(dis);
 
-// anagram test 
+// anagram test
 
-function anagramtest(s:any,t:any){
-  let a = s.split("").sort().join("")
-  let b = t.split("").sort().join("")
-  if(a === b){
-    return true
-  }
-  else{
-    return false
+function anagramtest(s: any, t: any) {
+  let a = s.split("").sort().join("");
+  let b = t.split("").sort().join("");
+  if (a === b) {
+    return true;
+  } else {
+    return false;
   }
 }
-let ts:any = "telengana"
-let newobj:any = {}
- let objlooping =(loop:any)=> {
-  
-  for(let j = 0 ; j< loop.length ; j++){
+let ts: any = "telengana";
+let newobj: any = {};
+let loop2obj :any = {}
+let objlooping = (loop: any,loop2 : any) => {
+  for (let j = 0; j < loop.length; j++) {
     // console.log(newobj[loop[j]])
-     (newobj[loop[j]] =( (newobj[loop[j]] || 0 )   + 1))
+    newobj[loop[j]] = (newobj[loop[j]] || 0) + 1;
+    loop2obj[loop2[j]] = (loop2obj[loop2[j]] || 0) + 1;
   }
- }
+  for(let key in newobj){
+    if(newobj[key] !== loop2obj[key])
+      return false
+    
+   
+  }
+  return true;
+};
 
- objlooping(ts) 
+console.log(objlooping("anabid","jibana"))
 
- 
-// newobj[ts[2]] = "sanjit"
-console.log(newobj)
+newobj[ts[2]] = "sanjit"
+console.log(newobj);
+
+let latestobj:any = {}
+let objstr = "ranjit rautaray";
+
+latestobj[objstr[3]] = 45
+latestobj[objstr[2]] = "sachin"
+console.log(latestobj)
+
 
 function Dsa2() {
   return (
