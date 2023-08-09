@@ -3,6 +3,7 @@ import "./App.scss";
 import Parent from "./components/Parent";
 import Child from "./components/child";
 import Dsa2 from "./components/dsa-2";
+import Dsa3 from "./components/dsa-3";
 
 function App() {
   useEffect(() => {}, []);
@@ -15,6 +16,8 @@ function App() {
       <Child />
 
       <Dsa2 />
+
+      <Dsa3 />
 
     </div>
   );
